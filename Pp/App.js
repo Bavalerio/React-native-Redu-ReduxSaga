@@ -1,19 +1,24 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { NotAuthenticated } from './components/NoAuth/routes';
+import { AuthenticatedRoutes } from './components/Auth/routes';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
+const styles = StyleSheet.create ( {
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'fff',
   },
 });
+
+class App extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <AuthenticatedRoutes />
+        {/* <NotAuthenticated/> */}
+      </View>
+    );
+  }
+}
+
+export default App;
